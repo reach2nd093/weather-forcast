@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import CurrentForcast from './components/CurrentForcast/CurrentForcast';
+import Forcast from './components/Forcast/Forcast';
 import DaySpecificForcast from './components/DaySpecificForcast/DaySpecificForcast';
 
 import './App.css';
@@ -9,10 +9,10 @@ import './App.css';
 function App() {
   return (
     <div className="app">
-      Weather forcast
+      <h1 className="app-title">Weather Forcast</h1>
       <div>Search box will be placed here</div>
       <Routes>
-        <Route path="/" element={<CurrentForcast />} />
+        <Route path="/" element={<Forcast />} />
         <Route path="/day-specific" element={<DaySpecificForcast />} />
       </Routes>
     </div>
