@@ -1,0 +1,52 @@
+.forcast {
+  color: #fff;
+  display: flex;
+  width: 80%;
+  margin-left: 10%;
+  gap: 24px;
+}
+
+.forcast > .current-forcast {
+  flex: 3;
+  display: flex;
+}
+
+.forcast > .weekly-forcast {
+  flex: 2;
+  display: flex;
+}
+
+.forcast > .current-forcast > .main-wrapper,
+.forcast > .weekly-forcast > .weekly-wrapper {
+  background-color: #202b3b;
+  padding: 0 24px;
+  flex-grow: 1;
+}
+
+@media (max-width: 1200px) {
+  .forcast {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+@media (max-width: 1024px) {
+  .forcast {
+    width: 100%;
+    margin-left: 0;
+  }
+  .forcast > .current-forcast {
+    padding-left: 24px;
+  }
+  .forcast > .weekly-forcast {
+    padding-right: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .forcast {
+    flex-direction: column;
+  }
+  .forcast > .current-forcast,
+  .forcast > .weekly-forcast {
+    padding: 0 24px;
+  }
+}
