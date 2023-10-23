@@ -1,0 +1,40 @@
+.search-wrapper {
+  margin-bottom: 24px;
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 15px;
+  display: flex;
+}
+.search {
+  -webkit-appearance: none;
+  outline: none;
+  padding: 24px;
+  background-color: #202b3b;
+  color: #fff;
+  font-size: 18px;
+  border: 1px solid #202b3b;
+  border-radius: 15px;
+  flex: 1;
+}
+.search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 18px;
+  width: 18px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAtUlEQVR4nO2WSwqEMBBEvYSi9z9OXI0Lj/NkUJDJwv6kBmHGgqy0eN1tUqbrHv2lgAGYjzU0+IvbD/TAi1MrMAWgOT97pbUWT+VHp+93a5Us2IRfQN3gvhoV1tgcntEER+EyaAQuhzq/22I8Cx/DDxldaTttgOugAbgeGgC7E+4bo9bAyW2uNjh3HCcc4ZCJ10tFEkkGJxGDEjg3/hbnKNQBL9mrizuRmvzslZfQZU3of/Qb2gDIApP3EFwGCQAAAABJRU5ErkJggg==);
+  background-size: 18px 18px;
+}
+
+@media (max-width: 1200px) {
+  .search-wrapper {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+@media (max-width: 1024px) {
+  .search-wrapper {
+    width: auto;
+    margin-left: 0;
+    padding: 0 24px;
+  }
+}
