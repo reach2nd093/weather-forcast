@@ -21,6 +21,8 @@
   background-color: #202b3b;
   padding: 0 24px;
   flex-grow: 1;
+  border: 1px solid #202b3b;
+  border-radius: 15px;
 }
 
 @media (max-width: 1200px) {
