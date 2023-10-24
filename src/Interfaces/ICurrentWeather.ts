@@ -1,8 +1,8 @@
-import ConditionInterface from './ConditionInterface';
+import ICondition from './ICondition';
 
-interface CurrentWeatherInterface {
+interface ICurrentWeather {
   temp_c: number;
-  condition: ConditionInterface;
+  condition: ICondition;
   wind_kph: number;
   wind_degree: number;
   wind_dir: string;
@@ -18,4 +18,4 @@ interface CurrentWeatherInterface {
   gust_kph: number;
 }
 
-export default CurrentWeatherInterface;
+export default ICurrentWeather;

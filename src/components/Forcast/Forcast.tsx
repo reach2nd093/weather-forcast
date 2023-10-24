@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import ForcastResponseInterface from '../../Interfaces/ForcastResponseInterface';
+import IForcastResponse from '../../Interfaces/IForcastResponse';
 
 import './Forcast.css';
 
 function Forcast() {
-  const [forcastData, setForcastData] = useState<ForcastResponseInterface | null>(null);
+  const [forcastData, setForcastData] = useState<IForcastResponse | null>(null);
 
   const getAPIData = async () => {
     try {
