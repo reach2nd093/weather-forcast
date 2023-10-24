@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ForcastResponseInterface from '../../Interfaces/ForcastResponseInterface';
 
 import './Forcast.css';
 
 function Forcast() {
+  const [forcastData, setForcastData] = useState<ForcastResponseInterface | null>(null);
+
   return (
     <div className="forcast">
       <main className="current-forcast">
