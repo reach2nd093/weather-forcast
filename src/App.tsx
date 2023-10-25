@@ -19,14 +19,24 @@ function App() {
     setSearchString(searchFieldString);
   };
 
+  const locationCity = localStorage.getItem('city');
+  localStorage.setItem('city', 'Tsukuba');
+
   return (
     <div className="app">
       <h1 className="app-title">Weather Forcast</h1>
-      <Search onChangeHandler={onSearchChange} />
-      <Routes>
-        <Route path="/" element={<Forcast />} />
-        <Route path="/day-specific" element={<DaySpecificForcast />} />
-      </Routes>
+
+      {locationCity ? (
+        <>
+          <Search onChangeHandler={onSearchChange} />
+          <Routes>
+            <Route path="/" element={<Forcast />} />
+            <Route path="/day-specific" element={<DaySpecificForcast />} />
+          </Routes>
+        </>
+      ) : (
+        <div className="app-initial-city">Add location asking here</div>
+      )}
     </div>
   );
 }
