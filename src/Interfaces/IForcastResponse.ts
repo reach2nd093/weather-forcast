@@ -20,14 +20,16 @@ export interface IForcastDay {
   astro: IAstro;
   day: IDay;
   hour: IHour[];
+  date: string;
 }
 
+export interface IForcast {
+  forecastday: IForcastDay[];
+}
 interface ForcastResponse {
   location: ILocation;
   current: ICurrentWeather;
-  forecast: {
-    forecastday: IForcastDay[];
-  };
+  forecast: IForcast;
 }
 
 export default ForcastResponse;
