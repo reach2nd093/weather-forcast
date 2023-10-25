@@ -1,0 +1,25 @@
+.weekly-forcast-title {
+  padding: 12px 0;
+  font-size: 16px;
+}
+.weekly-forcast-item {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 6px;
+}
+
+.weekly-forcast-item p {
+  margin: 0;
+}
+.weekly-forcast-date {
+  text-align: left;
+}
+.weekly-forcast-icon {
+  height: 30px;
+  width: 30px;
+  margin: 0 auto;
+}
+.weekly-forcast-temprature {
+  text-align: right;
+}
