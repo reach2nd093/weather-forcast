@@ -13,7 +13,6 @@ const WeeklyForcast = ({ weeklyForcast }: IWeeklyForcastProps) => (
         const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         var d = new Date(weekDay.date);
         var dayName = days[d.getDay()];
-        console.log(weekDay);
         return (
           <div className="weekly-forcast-item" key={weekDay.date}>
             <p className="weekly-forcast-date">{index === 0 ? 'Today' : dayName}</p>
