@@ -16,13 +16,14 @@
   display: flex;
 }
 
-.forcast > .current-forcast > .main-wrapper,
 .forcast > .weekly-forcast > .weekly-wrapper {
-  background-color: #202b3b;
   padding: 0 24px;
   flex-grow: 1;
-  border: 1px solid #202b3b;
   border-radius: 15px;
+}
+.forcast > .weekly-forcast > .weekly-wrapper {
+  background-color: #202b3b;
+  border: 1px solid #202b3b;
 }
 
 @media (max-width: 1200px) {
