@@ -19,7 +19,6 @@ const ForcastDetails = ({
   currentLocation,
   selectedDay,
 }: IForcastDetailsProps) => {
-  console.log(currentWeather, currentLocation);
   return (
     <>
       <div className="forcast-details-title">{title}</div>
@@ -57,8 +56,8 @@ const ForcastDetails = ({
                       hour12: true,
                     })}
                   </p>
-                  <img src={`https:${hour?.condition?.icon}`} alt="img" />
-                  <p className="forcast-details-hour-temprature">{hour?.temp_c}°</p>
+                  <img src={`https:${condition?.icon}`} alt="img" />
+                  <p className="forcast-details-hour-temprature">{temp_c}°</p>
                 </div>
               );
             })}
