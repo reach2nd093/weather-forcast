@@ -31,7 +31,8 @@ const ForcastDetails = ({
           <div className="forcast-details-temprature">
             {currentWeather?.temp_c}°
             <p>
-              ( {selectedDay?.day.mintemp_c}° / {selectedDay?.day.maxtemp_c}° )
+              {selectedDay?.day.mintemp_c && Math.round(selectedDay?.day.mintemp_c)}° -{' '}
+              {selectedDay?.day.maxtemp_c && Math.round(selectedDay?.day.maxtemp_c)}°
             </p>
           </div>
           <div className="forcast-details-city">
@@ -57,7 +58,7 @@ const ForcastDetails = ({
                     })}
                   </p>
                   <img src={`https:${condition?.icon}`} alt="img" />
-                  <p className="forcast-details-hour-temprature">{temp_c}°</p>
+                  <p className="forcast-details-hour-temprature">{Math.round(temp_c)}°</p>
                 </div>
               );
             })}

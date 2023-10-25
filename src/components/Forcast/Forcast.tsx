@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import ForcastDetails from '../ForcastDetails/ForcastDetails';
+import WeeklyForcast from '../WeeklyForcast/WeeklyForcast';
 import IForcastResponse from '../../Interfaces/IForcastResponse';
 
 import './Forcast.css';
@@ -32,15 +33,15 @@ const Forcast = () => {
             <div className="main-wrapper">
               <ForcastDetails
                 title="Today's weather"
-                currentWeather={forcastData?.current}
-                currentLocation={forcastData?.location}
-                selectedDay={forcastData?.forecast?.forecastday[0]}
+                currentWeather={forcastData.current}
+                currentLocation={forcastData.location}
+                selectedDay={forcastData.forecast.forecastday[0]}
               />
             </div>
           </main>
           <section className="weekly-forcast">
             <div className="weekly-wrapper">
-              <h3 className="widget-title">Weekly weather</h3>
+              <WeeklyForcast weeklyForcast={forcastData.forecast.forecastday} />
             </div>
           </section>
         </div>
