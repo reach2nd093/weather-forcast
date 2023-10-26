@@ -24,7 +24,7 @@ export const useGetApiData = (searchParam: string | null): IApiResponse => {
       setLoading(false);
     };
     getAPIData();
-  }, [searchParam]);
+  }, [searchParam, setLoading, setError, setData]);
 
   return { data, error, loading };
 };
