@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,10 +13,6 @@ function App() {
   const navigate = useNavigate();
 
   const [city, setCity] = useState<string | null>(localStorage.getItem('city'));
-
-  useEffect(() => {
-    console.log(searchString);
-  }, [searchString]);
 
   const onSearchChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const searchFieldString = event.target.value.toLocaleLowerCase();

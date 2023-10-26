@@ -23,7 +23,11 @@
   background-color: #202b3b;
   border: 1px solid #202b3b;
 }
-
+.forcast-error {
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+}
 @media (max-width: 1200px) {
   .forcast {
     width: 90%;
