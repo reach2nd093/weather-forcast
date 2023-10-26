@@ -12,7 +12,7 @@ const Error = () => {
     if (!location?.state) {
       navigate('/');
     }
-  }, [location]);
+  }, [location, navigate]);
   return (
     <>
       {location.state && (
