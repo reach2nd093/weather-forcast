@@ -20,8 +20,6 @@
   padding: 0 24px;
   flex-grow: 1;
   border-radius: 15px;
-}
-.forcast > .weekly-forcast > .weekly-wrapper {
   background-color: #202b3b;
   border: 1px solid #202b3b;
 }
@@ -32,6 +30,7 @@
     margin-left: 5%;
   }
 }
+
 @media (max-width: 1024px) {
   .forcast {
     width: 100%;

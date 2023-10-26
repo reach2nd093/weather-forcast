@@ -11,6 +11,7 @@ interface IForcastDetailsProps {
   currentWeather?: ICurrentWeather;
   currentLocation?: ILocation;
   selectedDay?: IForcastDay;
+  specificDay: boolean;
 }
 
 const ForcastDetails = ({
@@ -18,6 +19,7 @@ const ForcastDetails = ({
   currentWeather,
   currentLocation,
   selectedDay,
+  specificDay,
 }: IForcastDetailsProps) => {
   return (
     <>
@@ -28,10 +30,14 @@ const ForcastDetails = ({
           <p>{currentWeather?.condition?.text}</p>
         </div>
         <div className="forcast-details-location">
-          <div className="forcast-details-temprature">
-            {currentWeather?.temp_c}°
+          <div
+            className={`forcast-details-temprature ${
+              specificDay ? 'forcast-details-specific' : ''
+            }`}
+          >
+            {!specificDay && <>{currentWeather?.temp_c}°</>}
             <p>
-              {selectedDay?.day.mintemp_c && Math.round(selectedDay?.day.mintemp_c)}° -{' '}
+              L: {selectedDay?.day.mintemp_c && Math.round(selectedDay?.day.mintemp_c)}° - H:{' '}
               {selectedDay?.day.maxtemp_c && Math.round(selectedDay?.day.maxtemp_c)}°
             </p>
           </div>

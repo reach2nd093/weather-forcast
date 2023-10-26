@@ -17,7 +17,6 @@ function App() {
 
   const onSearchChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
-    console.log(searchFieldString);
     setSearchString(searchFieldString.trim());
   };
 
