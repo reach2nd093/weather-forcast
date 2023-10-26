@@ -8,14 +8,19 @@ import IForcastResponse from '../../Interfaces/IForcastResponse';
 
 import './Forcast.css';
 
-const Forcast = () => {
+interface IForcast {
+  searchString: string;
+}
+const Forcast = ({ searchString }: IForcast) => {
   const [forcastData, setForcastData] = useState<IForcastResponse | null>(null);
   const locationCity = localStorage.getItem('city');
+
+  const searchParam = searchString.length ? searchString : locationCity;
 
   const getAPIData = async () => {
     try {
       const apiResponse = await fetch(
-        `https://api.weatherapi.com/v1/forecast.json?key=bd3cbb44ddf44d4699730255231910&q=${locationCity}&days=10`,
+        `https://api.weatherapi.com/v1/forecast.json?key=bd3cbb44ddf44d4699730255231910&q=${searchParam}&days=10&aqi=no&alerts=no`,
       );
       const json = await apiResponse.json();
       setForcastData(json);
@@ -26,7 +31,7 @@ const Forcast = () => {
 
   useEffect(() => {
     getAPIData();
-  }, []);
+  }, [searchString]);
 
   return (
     <>
