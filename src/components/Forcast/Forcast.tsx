@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import ForcastDetails from '../ForcastDetails/ForcastDetails';
 import WeeklyForcast from '../WeeklyForcast/WeeklyForcast';
 import Loader from '../Loader/Loader';
-
-import IForcastResponse from '../../Interfaces/IForcastResponse';
+import IForcastResponse, { IForcastDay } from '../../Interfaces/IForcastResponse';
 
 import './Forcast.css';
 
-interface IForcast {
+interface IForcastProps {
   searchString: string;
 }
-const Forcast = ({ searchString }: IForcast) => {
+const Forcast = ({ searchString }: IForcastProps) => {
   const [forcastData, setForcastData] = useState<IForcastResponse | null>(null);
-  const locationCity = localStorage.getItem('city');
+  const navigate = useNavigate();
 
+  const locationCity = localStorage.getItem('city');
   const searchParam = searchString.length ? searchString : locationCity;
 
   const getAPIData = async () => {
@@ -33,6 +33,15 @@ const Forcast = ({ searchString }: IForcast) => {
     getAPIData();
   }, [searchString, getAPIData]);
 
+  const handleDetailsRedirect = (day: IForcastDay): void => {
+    navigate('/day-specific', {
+      state: {
+        selectedDay: day,
+        currentWeather: forcastData?.current,
+        currentLocation: forcastData?.location,
+      },
+    });
+  };
   return (
     <>
       {forcastData ? (
@@ -44,12 +53,16 @@ const Forcast = ({ searchString }: IForcast) => {
                 currentWeather={forcastData.current}
                 currentLocation={forcastData.location}
                 selectedDay={forcastData.forecast.forecastday[0]}
+                specificDay={false}
               />
             </div>
           </main>
           <section className="weekly-forcast">
             <div className="weekly-wrapper">
-              <WeeklyForcast weeklyForcast={forcastData.forecast.forecastday} />
+              <WeeklyForcast
+                weeklyForcast={forcastData.forecast.forecastday}
+                handleRedirect={handleDetailsRedirect}
+              />
             </div>
           </section>
         </div>

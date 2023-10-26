@@ -1,5 +1,19 @@
+.app {
+  padding-bottom: 24px;
+}
 .app-title {
   color: #fff;
   text-align: center;
   font-size: 48px;
+}
+
+@media (max-width: 1024px) {
+  .app-title {
+    font-size: 38px;
+  }
+}
+@media (max-width: 767px) {
+  .app-title {
+    font-size: 32px;
+  }
 }

@@ -52,7 +52,9 @@
 .forcast-details-city p {
   margin: 0;
 }
-
+.forcast-details-specific {
+  margin-top: 48px;
+}
 .forcast-details-temprature {
   font-size: 48px;
 }
@@ -100,8 +102,15 @@
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
   }
-  .forcast-details-title {
-    text-align: center;
+  .forcast-details-icon {
+    text-align: left;
+    margin-top: 5px;
+  }
+  .forcast-details-city h3 {
+    font-size: 24px;
+  }
+  .forcast-details-icon p {
+    margin-left: 24px;
   }
   .forcast-details-temprature {
     margin-top: 32px;
