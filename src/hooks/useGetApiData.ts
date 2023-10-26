@@ -16,7 +16,7 @@ export const useGetApiData = (searchParam: string | null): IApiResponse => {
     const getAPIData = async () => {
       setLoading(true);
       await fetch(
-        `https://api.weatherapi.com/v1/forecast.json?key=bd3cbb44ddf44d4699730255231910&q=${searchParam}&days=10&aqi=no&alerts=no`,
+        `${process.env.REACT_APP_API}/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${searchParam}&days=10&aqi=no&alerts=no`,
       )
         .then((response) => response.json())
         .then((json) => setData(json))
