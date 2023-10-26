@@ -1,0 +1,23 @@
+.initial-location {
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+}
+.initial-location input,
+.initial-location button {
+  -webkit-appearance: none;
+  outline: none;
+  padding: 12px;
+  background-color: #202b3b;
+  color: #fff;
+  font-size: 18px;
+  border: 1px solid #202b3b;
+  border-radius: 15px;
+}
+.initial-location input {
+  min-width: 300px;
+}
+.initial-location button {
+  margin-top: 12px;
+  cursor: pointer;
+}

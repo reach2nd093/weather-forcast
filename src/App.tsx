@@ -4,11 +4,12 @@ import { Routes, Route } from 'react-router-dom';
 import Forcast from './components/Forcast/Forcast';
 import DaySpecificForcast from './components/DaySpecificForcast/DaySpecificForcast';
 import Search from './components/Search/Search';
-
+import InitialLocation from './components/InitialLocation/InitialLocation';
 import './App.css';
 
 function App() {
   const [searchString, setSearchString] = useState<string>('');
+  const [city, setCity] = useState<string | null>(localStorage.getItem('city'));
 
   useEffect(() => {
     console.log(searchString);
@@ -16,26 +17,29 @@ function App() {
 
   const onSearchChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
-    setSearchString(searchFieldString);
+    console.log(searchFieldString);
+    setSearchString(searchFieldString.trim());
   };
 
-  const locationCity = localStorage.getItem('city');
-  localStorage.setItem('city', 'Tsukuba');
+  const handleInitialCity = (city: string) => {
+    localStorage.setItem('city', city);
+    setCity(city);
+  };
 
   return (
     <div className="app">
       <h1 className="app-title">Weather Forcast</h1>
 
-      {locationCity ? (
+      {city ? (
         <>
           <Search onChangeHandler={onSearchChange} />
           <Routes>
-            <Route path="/" element={<Forcast />} />
+            <Route path="/" element={<Forcast searchString={searchString} />} />
             <Route path="/day-specific" element={<DaySpecificForcast />} />
           </Routes>
         </>
       ) : (
-        <div className="app-initial-city">Add location asking here</div>
+        <InitialLocation setCityToLocalStorage={handleInitialCity} />
       )}
     </div>
   );
