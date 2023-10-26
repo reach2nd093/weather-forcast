@@ -17,21 +17,20 @@ const Forcast = ({ searchString }: IForcastProps) => {
   const locationCity = localStorage.getItem('city');
   const searchParam = searchString.length ? searchString : locationCity;
 
-  const getAPIData = async () => {
-    try {
-      const apiResponse = await fetch(
-        `https://api.weatherapi.com/v1/forecast.json?key=bd3cbb44ddf44d4699730255231910&q=${searchParam}&days=10&aqi=no&alerts=no`,
-      );
-      const json = await apiResponse.json();
-      setForcastData(json);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const getAPIData = async () => {
+      try {
+        const apiResponse = await fetch(
+          `https://api.weatherapi.com/v1/forecast.json?key=bd3cbb44ddf44d4699730255231910&q=${searchParam}&days=10&aqi=no&alerts=no`,
+        );
+        const json = await apiResponse.json();
+        setForcastData(json);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getAPIData();
-  }, [searchString, getAPIData]);
+  }, [searchString]);
 
   const handleDetailsRedirect = (day: IForcastDay): void => {
     navigate('/day-specific', {
