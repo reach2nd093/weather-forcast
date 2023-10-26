@@ -30,7 +30,7 @@ const Forcast = ({ searchString }: IForcastProps) => {
       }
     };
     getAPIData();
-  }, [searchString]);
+  }, [searchParam]);
 
   const handleDetailsRedirect = (day: IForcastDay): void => {
     navigate('/day-specific', {
