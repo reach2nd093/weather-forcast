@@ -19,7 +19,7 @@ const Forcast = ({ searchString }: IForcastProps) => {
   const searchParam = searchString.length ? searchString : locationCity;
 
   // call to the hook
-  const { data, loading, error }: IApiResponse = useGetApiData(searchParam);
+  const { data, loading }: IApiResponse = useGetApiData(searchParam);
 
   useEffect(() => {
     setForcastData(data);

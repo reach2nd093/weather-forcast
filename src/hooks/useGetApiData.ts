@@ -3,13 +3,11 @@ import IForcastResponse from '../Interfaces/IForcastResponse';
 
 export interface IApiResponse {
   data: any;
-  error: any;
   loading: Boolean;
 }
 
 export const useGetApiData = (searchParam: string | null): IApiResponse => {
   const [data, setData] = useState<IForcastResponse>();
-  const [error, setError] = useState<any>();
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -20,11 +18,11 @@ export const useGetApiData = (searchParam: string | null): IApiResponse => {
       )
         .then((response) => response.json())
         .then((json) => setData(json))
-        .catch(() => setError(error));
+        .catch((error) => console.log(error));
       setLoading(false);
     };
     getAPIData();
-  }, [searchParam, setLoading, setError, setData]);
+  }, [searchParam]);
 
-  return { data, error, loading };
+  return { data, loading };
 };
