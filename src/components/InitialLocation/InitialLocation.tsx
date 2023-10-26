@@ -8,8 +8,9 @@ interface InitialCityProps {
 
 const InitialLocation = ({ setCityToLocalStorage }: InitialCityProps) => {
   const [city, setCity] = useState<string>('');
-
+  const [error, setError] = useState<boolean>(false);
   const handleChange = (value: string) => {
+    setError(false);
     setCity(value);
   };
 
@@ -17,7 +18,7 @@ const InitialLocation = ({ setCityToLocalStorage }: InitialCityProps) => {
     if (city.length) {
       setCityToLocalStorage(city);
     } else {
-      alert('Please enter the city name');
+      setError(true);
     }
   };
 
@@ -30,7 +31,8 @@ const InitialLocation = ({ setCityToLocalStorage }: InitialCityProps) => {
         placeholder="Enter the city name"
         onChange={(e) => handleChange(e.target.value.trim())}
       />
-      <br />
+      {error && <p className="city-error">Please provide default city name.</p>}
+      {!error && <br />}
       <button value="Save" onClick={handleSave}>
         Save
       </button>
