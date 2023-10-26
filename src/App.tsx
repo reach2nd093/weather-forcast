@@ -6,6 +6,8 @@ import Forcast from './components/Forcast/Forcast';
 import DaySpecificForcast from './components/DaySpecificForcast/DaySpecificForcast';
 import Search from './components/Search/Search';
 import InitialLocation from './components/InitialLocation/InitialLocation';
+import Error from './components/Error/Error';
+
 import './App.css';
 
 function App() {
@@ -35,6 +37,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Forcast searchString={searchString} />} />
             <Route path="/day-specific" element={<DaySpecificForcast />} />
+            <Route path="/error" element={<Error />} />
           </Routes>
         </>
       ) : (
