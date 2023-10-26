@@ -31,7 +31,7 @@ const Forcast = ({ searchString }: IForcast) => {
 
   useEffect(() => {
     getAPIData();
-  }, [searchString]);
+  }, [searchString, getAPIData]);
 
   return (
     <>
