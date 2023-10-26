@@ -15,6 +15,12 @@ export interface IDay {
   mintemp_c: number;
   maxtemp_c: number;
   condition: ICondition;
+  avghumidity: number;
+  maxwind_kph: number;
+  avgtemp_c: number;
+  uv: number;
+  avgvis_km: number;
+  totalprecip_mm: number;
 }
 export interface IForcastDay {
   astro: IAstro;

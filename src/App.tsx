@@ -1,5 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import Forcast from './components/Forcast/Forcast';
 import DaySpecificForcast from './components/DaySpecificForcast/DaySpecificForcast';
@@ -9,6 +10,8 @@ import './App.css';
 
 function App() {
   const [searchString, setSearchString] = useState<string>('');
+  const navigate = useNavigate();
+
   const [city, setCity] = useState<string | null>(localStorage.getItem('city'));
 
   useEffect(() => {
@@ -17,8 +20,8 @@ function App() {
 
   const onSearchChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
-    console.log(searchFieldString);
     setSearchString(searchFieldString.trim());
+    navigate('/');
   };
 
   const handleInitialCity = (city: string) => {

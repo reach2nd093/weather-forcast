@@ -1,0 +1,48 @@
+.day-specific-forcast {
+  color: #fff;
+  display: flex;
+  width: 80%;
+  margin-left: 10%;
+  gap: 24px;
+}
+
+.day-specific-forcast > .day-specific-details {
+  flex: 2;
+}
+
+.day-specific-forcast > .day-specific-extra-details {
+  flex: 1;
+}
+
+@media (max-width: 1200px) {
+  .day-specific-forcast {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+@media (max-width: 1024px) {
+  .day-specific-forcast {
+    width: 100%;
+    margin-left: 0;
+  }
+  .day-specific-forcast > .day-specific-details {
+    padding-left: 24px;
+  }
+  .day-specific-forcast > .day-specific-extra-details {
+    padding-right: 24px;
+  }
+}
+@media (min-width: 1025px) {
+  .day-specific-forcast > .day-specific-extra-details {
+    order: -1;
+  }
+}
+@media (max-width: 767px) {
+  .day-specific-forcast {
+    flex-direction: column;
+  }
+  .day-specific-forcast > .day-specific-details,
+  .day-specific-forcast > .day-specific-extra-details {
+    padding: 0 24px;
+  }
+}

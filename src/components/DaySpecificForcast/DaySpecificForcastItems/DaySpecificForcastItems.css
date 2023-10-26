@@ -1,0 +1,87 @@
+.day-specific {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  height: 100%;
+}
+.item {
+  background-color: #202b3b;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.item p {
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+}
+.item p:last-child {
+  font-size: 24px;
+  color: #fff;
+}
+.day-specific-sunrise {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 2;
+  grid-column-end: 2;
+}
+.day-specific-sunset {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-row-end: 2;
+  grid-column-end: 3;
+}
+.day-specific-humidity {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-row-end: 3;
+  grid-column-end: 2;
+}
+.day-specific-uv {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-row-end: 3;
+  grid-column-end: 3;
+}
+.day-specific-wind {
+  grid-row-start: 3;
+  grid-column-start: 1;
+  grid-row-end: 4;
+  grid-column-end: 2;
+}
+.day-specific-visibility {
+  grid-row-start: 3;
+  grid-column-start: 2;
+  grid-row-end: 4;
+  grid-column-end: 3;
+}
+.day-specific-perception {
+  grid-row-start: 4;
+  grid-column-start: 1;
+  grid-row-end: 5;
+  grid-column-end: 2;
+}
+.day-specific-temp {
+  background-color: #202b3b;
+  grid-row-start: 4;
+  grid-column-start: 2;
+  grid-row-end: 5;
+  grid-column-end: 3;
+}
+
+@media (max-width: 1024px) {
+  .item p:last-child {
+    font-size: 18px;
+    color: #fff;
+  }
+}
+@media (max-width: 767px) {
+  .item {
+    padding: 24px 0;
+    font-size: 18px;
+    color: #fff;
+  }
+}

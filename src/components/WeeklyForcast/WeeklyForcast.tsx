@@ -4,8 +4,9 @@ import './WeeklyForcast.css';
 
 interface IWeeklyForcastProps {
   weeklyForcast: IForcastDay[];
+  handleRedirect: (day: IForcastDay) => void;
 }
-const WeeklyForcast = ({ weeklyForcast }: IWeeklyForcastProps) => (
+const WeeklyForcast = ({ weeklyForcast, handleRedirect }: IWeeklyForcastProps) => (
   <div className="weekly-forcast-wrapper">
     <div className="weekly-forcast-title">10-Days forcast</div>
     <div className="weekly-forcast-list">
@@ -14,7 +15,11 @@ const WeeklyForcast = ({ weeklyForcast }: IWeeklyForcastProps) => (
         var d = new Date(weekDay.date);
         var dayName = days[d.getDay()];
         return (
-          <div className="weekly-forcast-item" key={weekDay.date}>
+          <div
+            className="weekly-forcast-item"
+            key={weekDay.date}
+            onClick={() => handleRedirect(weekDay)}
+          >
             <p className="weekly-forcast-date">{index === 0 ? 'Today' : dayName}</p>
             <img
               className="weekly-forcast-icon"
