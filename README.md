@@ -4,7 +4,7 @@ Basic application to check weather using:
 2. Typescript
 3. https://www.weatherapi.com/
 
-
+LIVE : https://nd-weather-forcast.web.app/
 ## Setup the project
 
 1. Clone the repository
